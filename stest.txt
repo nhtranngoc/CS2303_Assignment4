@@ -1,0 +1,2 @@
+Employee. Name = Harry Palmer, Salary = 5000, Starting year = 1960
+Employee. Name = Erik Grantby, Salary = 10000, Starting year = 1945
