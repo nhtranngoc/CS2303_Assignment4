@@ -1,6 +1,11 @@
 #ifndef STRUCT_H
 #define STRUCT_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
+
 // Define some structures
 struct _Employee {
   int salary; // Monthly salary in UK pounds sterling
