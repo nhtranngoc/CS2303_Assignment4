@@ -12,6 +12,7 @@ struct _Employee {
   int starting_year;
   char *name; // Pointer to character string holding name of employee.
               // MUST be dynamically allocated from the heap.
+  char *department;
 };
 
 typedef struct _Employee Employee; // For convenience
@@ -19,5 +20,6 @@ typedef struct _Employee Employee; // For convenience
 // function prototypes
 void printEmployee(Employee *employee);
 void outputEmployeeFancy(FILE *stream, Employee *employee);
+Employee* generateEmployee(int salary, int starting_year, char* name, char* department);
 
 #endif

@@ -11,20 +11,30 @@ int main() {
   harry.salary = 5000;
   harry.name = strdup("Harry Palmer"); // Make a dynamic copy.
   harry.starting_year = 1960;
+  harry.department = strdup("Homicide");
   
   Employee bluejay; // Declare a local variable (a struct).
   bluejay.salary = 10000;
   bluejay.name = strdup("Erik Grantby"); // Make a dynamic copy.
   bluejay.starting_year = 1945;
+  bluejay.department = strdup("Pesticide");
   
   Employee nam;
   nam.salary = 9999;
   nam.name = strdup("Nam");
   nam.starting_year = 2015;
+  nam.department = strdup("Logistics");
+
+  Employee* bozhena = generateEmployee(15,1505,"Bozhena","IT");
+  Employee* quilek = generateEmployee(7852,2503,"Quilek","HR");
 
   // Output the employees to stdout.
   printEmployee(&harry);
   printEmployee(&bluejay);
+  printEmployee(&nam);
+  printEmployee(bozhena);
+  printEmployee(quilek);
+
 
   // Output the employees to a file.
   printf("About to write to file.\n");
@@ -37,6 +47,9 @@ int main() {
   }
   outputEmployeeFancy(outfile, &harry);
   outputEmployeeFancy(outfile, &bluejay);
+  outputEmployeeFancy(outfile, &nam);
+  outputEmployeeFancy(outfile, bozhena);
+  outputEmployeeFancy(outfile, quilek);
   fclose(outfile); // Close the file
 
   printf("Ending program stest.\n"); 

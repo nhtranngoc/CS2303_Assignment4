@@ -1,2 +1,5 @@
-Employee. Name = Harry Palmer, Salary = 5000, Starting year = 1960
-Employee. Name = Erik Grantby, Salary = 10000, Starting year = 1945
+Employee. Name = Harry Palmer, Salary = 5000, Starting year = 1960, Department = Homicide
+Employee. Name = Erik Grantby, Salary = 10000, Starting year = 1945, Department = Pesticide
+Employee. Name = Nam, Salary = 9999, Starting year = 2015, Department = Logistics
+Employee. Name = Bozhena, Salary = 15, Starting year = 1505, Department = IT
+Employee. Name = Quilek, Salary = 7852, Starting year = 2503, Department = HR
