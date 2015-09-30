@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <readline/readline.h>
+
 
 // Define some structures
 struct _Employee {

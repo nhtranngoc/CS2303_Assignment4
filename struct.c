@@ -35,3 +35,71 @@ Employee* generateEmployee(int salary, int starting_year, char* name, char* depa
     emp->department = strdup(department);
     return emp;
 }
+
+Employee* promptEmployee(){
+	int state=0;
+	char* input;
+
+	char name[32];
+	char department[50];
+	int salary;
+	int starting_year;
+
+	while(1){
+		switch(state){
+			case 0:
+				input = readline("Please enter employee's name: ");
+				if (sscanf(input, "%s", name))
+					state = 1;
+				else
+					state = -1;
+				break;
+
+			case 1:
+				free(input);
+				input = readline("Please enter employee's starting year: ");
+				if (sscanf(input, "%d", starting_year)) 
+					state = 2;
+				else
+					state = -1;
+				break;
+
+			case 2:
+				free(input);
+				input = readline("Please enter employee's department: ");
+				if (sscanf(input, "%s", department)) 
+					state = 3;
+				else
+					state = -1;
+				break;
+			case 3: 
+				free(input);
+				input = readline("Please enter employee's salary: ");
+				if (sscanf(input, "%d", salary)) 
+					break;
+				else
+					state = -1;
+				break;
+			case -1:
+				printf("Sorry, please try again.\n");
+				free(input);
+				state = 0;
+				break;
+		}
+	}
+
+	return generateEmployee(salary, starting_year, name, department);
+}
+
+void printEmployeeToFile(FILE *output, Employee *employee){
+    fprintf(output, "%s %d %d %s\n",
+            employee->name, employee->starting_year, employee->salary, employee->department);
+}
+
+void freeEmployee(Employee* employee){
+	free(employee->name);
+	free(employee->starting_year);
+	free(employee->salary);
+	free(employee->department);
+	free(employee);
+}
