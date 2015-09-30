@@ -43,7 +43,7 @@ Employee* promptEmployee(){
 	char name[32];
 	char department[50];
 	int salary;
-	int starting_year;
+	int year;
 
 	while(1){
 		switch(state){
@@ -58,7 +58,7 @@ Employee* promptEmployee(){
 			case 1:
 				free(input);
 				input = readline("Please enter employee's starting year: ");
-				if (sscanf(input, "%d", starting_year)) 
+				if (sscanf(input, "%i", year)) 
 					state = 2;
 				else
 					state = -1;
@@ -87,8 +87,7 @@ Employee* promptEmployee(){
 				break;
 		}
 	}
-
-	return generateEmployee(salary, starting_year, name, department);
+	return generateEmployee(salary, year, name, department);
 }
 
 void printEmployeeToFile(FILE *output, Employee *employee){
